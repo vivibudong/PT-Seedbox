@@ -74,7 +74,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/vivibudong/PT-Seedbox/refs/he
 
 ## 卸载
 
-完整清理所有组件（包括配置、数据、依赖包）：
+完整卸载（包括配置、数据、依赖包、Docker、容器与镜像、系统优化等，不建议在生产环境执行）：
+**执行后数据 无法恢复  ，请确保脑子与手已经对齐颗粒度**
 
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/vivibudong/PT-Seedbox/refs/heads/main/qb_fb_vertex_installer.sh) \
@@ -130,6 +131,7 @@ For issues or suggestions, open an issue on GitHub or reach out via email: budon
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=vivibudong/PT-Seedbox&type=date&legend=top-left)](https://www.star-history.com/#vivibudong/PT-Seedbox&type=date&legend=top-left)
+
 
 
 
