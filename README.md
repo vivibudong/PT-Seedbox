@@ -56,7 +56,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/vivibudong/PT-Seedbox/refs/he
 |------|------|------|
 | `-u` | 用户名 | ✅ |
 | `-p` | 密码（≥12位） | ✅ |
-| `-c` | qBittorrent 缓存大小（MiB）| 建议1/4内存大小 | ✅ |
+| `-c` | qBit缓存（MB） 建议1/4内存大小 | ✅ |
 | `-v` | 安装 Vertex 面板 | ❌ |
 | `-f` | 安装 FileBrowser | ❌ |
 | `-d` | Vertex data 目录 ZIP 直链 | ❌ |
@@ -122,6 +122,7 @@ For issues or suggestions, open an issue on GitHub or reach out via email: budon
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=vivibudong/PT-Seedbox&type=date&legend=top-left)](https://www.star-history.com/#vivibudong/PT-Seedbox&type=date&legend=top-left)
+
 
 
 
