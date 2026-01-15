@@ -1820,8 +1820,10 @@ publicip=$(curl -s --max-time 5 https://ipinfo.io/ip 2>/dev/null || echo "无法
 
 if [[ -n "$vertex_install_success" ]]; then
     vertex_container_ip=""
+    vertex_bridge_gateway=""
     if command -v docker >/dev/null 2>&1; then
         vertex_container_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$vertex_name" 2>/dev/null)
+        vertex_bridge_gateway=$(docker network inspect bridge -f '{{(index .IPAM.Config 0).Gateway}}' 2>/dev/null)
     fi
     echo "--------"
     info "🌐 Vertex"
@@ -1829,7 +1831,9 @@ if [[ -n "$vertex_install_success" ]]; then
     if [ -n "$vertex_container_ip" ]; then
         boring_text "Docker 内网地址: $vertex_container_ip:3000"
     fi
-    boring_text "如需通过 localhost 连接 qBittorrent,请使用: 172.16.0.1:$qb_port"
+    if [ -n "$vertex_bridge_gateway" ]; then
+        boring_text "如需通过 localhost 连接 qBittorrent,请使用: $vertex_bridge_gateway:$qb_port"
+    fi
     boring_text "用户名: $username"
     boring_text "密码: $password"
 fi
