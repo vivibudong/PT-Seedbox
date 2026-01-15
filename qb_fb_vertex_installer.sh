@@ -1834,8 +1834,6 @@ if [[ -n "$vertex_install_success" ]]; then
     if [ -n "$vertex_bridge_gateway" ]; then
         boring_text "如需通过 localhost 连接 qBittorrent,请使用: $vertex_bridge_gateway:$qb_port"
     fi
-    boring_text "用户名: $username"
-    boring_text "密码: $password"
 fi
 
 if [[ -n "$qb_install_success" ]]; then
