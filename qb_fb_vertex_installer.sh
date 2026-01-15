@@ -1832,7 +1832,7 @@ if [[ -n "$vertex_install_success" ]]; then
         boring_text "Docker 内网地址: $vertex_container_ip:3000"
     fi
     if [ -n "$vertex_bridge_gateway" ]; then
-        boring_text "如需通过 localhost 连接 qBittorrent,请使用: $vertex_bridge_gateway:$qb_port"
+        boring_text "如需通过内网连接qBit,请使用: $vertex_bridge_gateway:$qb_port"
     fi
 fi
 
