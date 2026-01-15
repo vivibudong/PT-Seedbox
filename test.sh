@@ -1819,9 +1819,17 @@ echo -e "\n"
 publicip=$(curl -s --max-time 5 https://ipinfo.io/ip 2>/dev/null || echo "无法获取")
 
 if [[ -n "$vertex_install_success" ]]; then
+    vertex_container_ip=""
+    if command -v docker >/dev/null 2>&1; then
+        vertex_container_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$vertex_name" 2>/dev/null)
+    fi
     echo "--------"
     info "🌐 Vertex"
     boring_text "管理地址: http://$publicip:$vertex_port"
+    if [ -n "$vertex_container_ip" ]; then
+        boring_text "Docker 内网地址: $vertex_container_ip:3000"
+    fi
+    boring_text "如需通过 localhost 连接 qBittorrent,请使用: 172.16.0.1:$qb_port"
     boring_text "用户名: $username"
     boring_text "密码: $password"
 fi
@@ -1839,6 +1847,12 @@ if [[ -n "$filebrowser_install_success" ]]; then
 fi
 
 echo "--------"
+if [[ -n "$qb_install_success" ]] || [[ -n "$vertex_install_success" ]] || [[ -n "$filebrowser_install_success" ]]; then
+    info "🔐 账号信息"
+    boring_text "用户名: $username"
+    boring_text "密码: $password"
+    echo "--------"
+fi
 echo -e "\n"
 
 warn "建议重启系统以确保所有优化生效，如果无法打开网页，可能是防火墙没有放通端口"
