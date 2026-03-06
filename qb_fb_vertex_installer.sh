@@ -617,6 +617,11 @@ install_vertex_() {
                 # 自动查找并修改 qBittorrent 客户端配置文件
                 if [ -d "$vertex_data_dir/data/client" ]; then
                     info_2 "更新 qBittorrent 客户端配置..."
+
+                    # ✅ 新增：在函数内部提前获取 bridge gateway
+                    if [ -z "$vertex_bridge_gateway" ] && command -v docker >/dev/null 2>&1; then
+                        vertex_bridge_gateway=$(docker network inspect bridge -f '{{(index .IPAM.Config 0).Gateway}}' 2>/dev/null)
+                    fi
                     
                     # 查找所有 type 为 qBittorrent 的客户端配置文件
                     local updated_count=0
