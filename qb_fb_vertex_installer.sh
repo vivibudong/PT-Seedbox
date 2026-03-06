@@ -628,7 +628,7 @@ install_vertex_() {
                             if [ "$client_type" = "qBittorrent" ]; then
                                 # 使用 jq 更新配置
                                 if command -v jq >/dev/null 2>&1; then
-                                    jq --arg url "http://127.0.0.1:$qb_port" \
+                                    jq --arg url "http://$vertex_bridge_gateway:$qb_port" \
                                        --arg port "$qb_port" \
                                        --arg username "$username" \
                                        --arg password "$password" \
