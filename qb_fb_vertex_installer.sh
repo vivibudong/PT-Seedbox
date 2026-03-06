@@ -1829,10 +1829,10 @@ if [[ -n "$vertex_install_success" ]]; then
     info "🌐 Vertex"
     boring_text "管理地址: http://$publicip:$vertex_port"
     if [ -n "$vertex_container_ip" ]; then
-        boring_text "Docker 内网地址: $vertex_container_ip:3000"
+        boring_text "Vertex容器内网地址: $vertex_container_ip:3000"
     fi
     if [ -n "$vertex_bridge_gateway" ]; then
-        boring_text "如需通过内网连接qBit,请使用: $vertex_bridge_gateway:$qb_port"
+        boring_text "如需通过内网连接qBit,请在下载器中使用: $vertex_bridge_gateway:$qb_port"
     fi
 fi
 
