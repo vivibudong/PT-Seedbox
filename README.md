@@ -134,11 +134,10 @@ For issues or suggestions, open an issue on GitHub or reach out via email: budon
 
 <div align="center"> <strong>Made with ❤️ by <a href="https://github.com/vivibudong">Vivi不懂</a></strong> </div>
 
+
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=vivibudong/PT-Seedbox&type=date&legend=top-left)](https://www.star-history.com/#vivibudong/PT-Seedbox&type=date&legend=top-left)
-
-
+[![Star History Chart](https://api.star-history.com/chart?repos=vivibudong/EasyMail&type=date&legend=top-left)](https://www.star-history.com/?repos=vivibudong%2FEasyMail&type=date&legend=top-left)
 
 
 
